@@ -8,6 +8,7 @@ let night = document.querySelector("#night");
 // Local
 window.addEventListener("load", () => {
   document.body.classList.add("day");
+  day.firstChild.classList.replace("fa-sun", "fa-moon");
 });
 let theme = localStorage.getItem("theme");
 if (theme !== null) {
