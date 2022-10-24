@@ -6,7 +6,9 @@ let night = document.querySelector("#night");
 // Shuffle
 
 // Local
-
+window.addEventListener("load", () => {
+  document.body.classList.add("day");
+});
 let theme = localStorage.getItem("theme");
 if (theme !== null) {
   document.body.classList.remove("day");
