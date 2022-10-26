@@ -50,7 +50,7 @@ let form = document.getElementById("form");
 let alertDiv = document.getElementById("alert");
 let alertp = document.querySelector("#alert p");
 let alertbtn = document.querySelector("#alert button");
-console.log(alertp);
+let empty = document.querySelector("#empty");
 function warning(text) {
   alertp.innerHTML = text;
   alertDiv.style.cssText = `
@@ -275,7 +275,6 @@ btnarr.forEach((btn) => {
   });
 });
 let filterBtn = document.querySelectorAll(".filter button");
-console.log(filterBtn);
 filterBtn.forEach((btn) => {
   btn.addEventListener("click", function () {
     filterBtn.forEach((btn) => {
