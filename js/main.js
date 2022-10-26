@@ -50,7 +50,6 @@ let form = document.getElementById("form");
 let alertDiv = document.getElementById("alert");
 let alertp = document.querySelector("#alert p");
 let alertbtn = document.querySelector("#alert button");
-let empty = document.querySelector("#empty");
 function warning(text) {
   alertp.innerHTML = text;
   alertDiv.style.cssText = `
@@ -64,6 +63,13 @@ alertbtn.addEventListener("click", () => {
 });
 let arrTask = [];
 
+let list = localStorage.getItem("list");
+// Add Task To localStorage
+if (list !== null) {
+  let lists = JSON.parse(list);
+  arrTask = lists;
+  appendLis(arrTask);
+}
 // Handle input and form
 input.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
@@ -93,14 +99,6 @@ form.addEventListener("submit", function (e) {
     warning(empty);
   }
 });
-
-let list = localStorage.getItem("list");
-// Add Task To localStorage
-if (list !== null) {
-  let lists = JSON.parse(list);
-  arrTask = lists;
-  appendLis(arrTask);
-}
 
 function add(inputValue) {
   let task = {
@@ -198,7 +196,6 @@ function appendLis(arrTask) {
 todo.addEventListener("click", function (e) {
   if (e.target.classList.contains("delete")) {
     e.target.parentElement.parentElement.remove();
-    console.log(e.target.parentElement.parentElement);
     arrTask = arrTask.filter(
       (task) =>
         task.id !=
@@ -265,7 +262,6 @@ btnarr.forEach((btn) => {
       if (li.classList.contains("completed")) {
         arr.forEach((li) => {
           li.style.display = "none";
-          console.log("Yes");
         });
       }
     });
