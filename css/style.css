@@ -323,12 +323,11 @@ button {
   padding: 0.5rem;
 }
 .filter button {
-  background-color: var(--notActive);
-  color: var(--text);
+  background-color: rgba(0, 84, 77, 50%);
+  color: white;
 }
 .filter button.active {
-  background-color: var(--active);
-  color: var(--bg);
+  background-color: #00544d;
 }
 button:active {
   opacity: 0.7;
